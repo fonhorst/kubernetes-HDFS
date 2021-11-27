@@ -2,3 +2,5 @@ tests/bin
 tests/tmp
 
 .idea
+
+compiled-hdfs.yaml
