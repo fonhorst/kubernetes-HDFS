@@ -5,7 +5,9 @@ zookeeper:
   ## Configure Zookeeper resource requests and limits
   ## ref: http://kubernetes.io/docs/user-guide/compute-resources/
   resources: ~
-
+  persistance:
+    storageClass: global-zk-storage
+    accessMode: ReadWriteMany
   ## The JVM heap size to allocate to Zookeeper
   env:
     ZK_HEAP_SIZE: 1G
@@ -212,7 +214,6 @@ global:
   ## ConfigMap containing the kerberos config file.
   ##
   # kerberosConfigMapOverride: kerberos-config
-
   ## Effective only if Kerberos is enabled. Name of the kerberos config file inside
   ## the config map.
   kerberosConfigFileName: krb5.conf
